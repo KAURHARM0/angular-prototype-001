@@ -1,0 +1,14 @@
+button{
+  border-radius: 5px;
+}
+
+mat-grid-tile {
+  /* background: lightblue; */
+  /* overflow:hidden; */
+  margin-bottom: 5px;
+  height: 100%;
+}
+
+textArea {
+  border: 1px solid silver;
+}

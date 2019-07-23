@@ -1,0 +1,24 @@
+<div style="margin: 12px; width: 100%">
+  <div class="row" style="overflow:hidden; width: 100%;">
+    <div class="col-9" style="width: 80%; height: 95%;">
+      <textarea matInput #ruleDefinition placeholder="Rule Expression" style="margin: 8px; width: 100%; height: 100%; border: 1px solid gray;"></textarea>
+    </div>
+    <div class="col-1.5" style="margin: 8px; width: 10%">
+      <mat-grid-list class="float-right" cols="2" rowHeight="30px" style="width: 8rem;">
+        <mat-grid-tile  *ngFor="let btn of btns">
+          <button class="example-icon" style="width: 100%;" (click)="onRuleButtonsClick(btn)">{{btn}}</button>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div>
+    <div class="col-1.5"  style="margin: 8px; width: 10%">
+      <mat-grid-list class="float-right" cols="1" rowHeight="30px" style="width: 8rem;">
+        <mat-grid-tile>
+          <button class="example-icon" style="width: 100%;" (click)="onExpCheckButtonClick()">Check</button>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <button class="example-icon" style="width: 100%;" (click)="onExpResetButtonClick()">Reset</button>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div>
+  </div>
+</div>
