@@ -2,12 +2,15 @@ import {ViewChild, TemplateRef, ElementRef, AfterViewInit, OnInit, ViewContainer
 import { Component  } from '@angular/core';
 
 import { EventEmitterService } from '../providers/event-emitter.service';
+import { CartValueComponent } from '../templates/cartValueCondition/cartValueCondition.component';
 
 @Component({selector: 'scroll-carousel', 
 templateUrl: './scroll-carousel.component.html', 
 styleUrls: ['./scroll-carousel.component.css']})
 
 export class ScrollCarouselComponent implements OnInit  {
+  
+@ViewChild('inner', {read: ViewContainerRef, static: false}) inner;
 constructor(    
     private eventEmitterService: EventEmitterService, private resolver: ComponentFactoryResolver
   ) { } 
@@ -23,5 +26,9 @@ constructor(
 
   addNewCard(object){
     debugger;
+    if (object.from == "Cart Value Condition") {
+      const factory = this.resolver.resolveComponentFactory(CartValueComponent);
+      let componentRef = this.inner.createComponent(factory);
+    }
   }
 }
