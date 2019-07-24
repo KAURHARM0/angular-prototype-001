@@ -10,9 +10,12 @@ styleUrls: ['./conditionList-sidePanel.component.css']})
 export class ConditionListComponent implements OnInit  {
 
   messages=[
-    {name:"Cart Value Condition", subject:"def", content:"ghi"},
-    {name:"Qualifying Product Condition", subject:"mno", content:"pqr"},
-    {name:"Quantity Condition", subject:"vwx", content:"yz"}
+    {name:"Cart Value Condition", subject:"detail", content:"detail"},
+    {name:"Qualifying Product Condition", subject:"detail", content:"detail"},
+    {name:"Individual Product Condition", subject:"detail", content:"detail"},
+    {name:"Individual Product Quantity Condition", subject:"detail", content:"detail"},
+    {name:"Total Cart Quantity Condition", subject:"detail", content:"detail"},
+    {name:"Account Condition", subject:"detail", content:"detail"}
   ];
 
    constructor(    

@@ -37,6 +37,21 @@ constructor(
     if (object.name == "Cart Value Condition") {
       const factory = this.resolver.resolveComponentFactory(CartValueComponent);
       componentRef = this.inner.createComponent(factory); 
+    } else if (object.name == "Qualifying Product Condition") {
+      const factory = this.resolver.resolveComponentFactory(CartValueComponent);
+      componentRef = this.inner.createComponent(factory); 
+    } else if (object.name == "Individual Product Condition") {
+      const factory = this.resolver.resolveComponentFactory(CartValueComponent);
+      componentRef = this.inner.createComponent(factory); 
+    } else if (object.name == "Total Cart Quantity Condition") {
+      const factory = this.resolver.resolveComponentFactory(CartValueComponent);
+      componentRef = this.inner.createComponent(factory); 
+    } else if (object.name == "Individual Product Quantity Condition") {
+      const factory = this.resolver.resolveComponentFactory(CartValueComponent);
+      componentRef = this.inner.createComponent(factory); 
+    } else if (object.name == "Account Condition") {
+      const factory = this.resolver.resolveComponentFactory(CartValueComponent);
+      componentRef = this.inner.createComponent(factory); 
     }
 
     data.name = object.name;

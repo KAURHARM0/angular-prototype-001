@@ -27,3 +27,8 @@ card-deck {
   margin:10px;
   max-width: 100%;
 }
+
+.inner{
+  height: 100%;
+  max-width: 100%;
+}

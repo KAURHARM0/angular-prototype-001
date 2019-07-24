@@ -3,5 +3,11 @@ mat-list-item {
   border-left: 5px solid blue;
   margin: 12px;
   border-radius: 5px;
+  height: auto;
   /* padding: 12px; */
+}
+mat-list {
+  height: auto;
+  display: block;
+  overflow: auto;
 }
