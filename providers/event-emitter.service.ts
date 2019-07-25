@@ -8,7 +8,8 @@ export class EventEmitterService {
     
   invokeScrollComponentFunction = new EventEmitter(); 
   invokeExpressionComponentFunction = new EventEmitter();    
-  subsVar: Subscription;    
+  subsVar1: Subscription;  
+  subsVar2: Subscription;    
     
   constructor() { }    
     
@@ -18,5 +19,5 @@ export class EventEmitterService {
 
   onCardAddButtonClick(object:any) {
   this.invokeExpressionComponentFunction.emit(object); 
-  }
+  }   
 } 

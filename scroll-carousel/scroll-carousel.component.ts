@@ -23,8 +23,8 @@ constructor(
   ) { } 
 
   ngOnInit(){
-    if (this.eventEmitterService.subsVar == undefined) {    
-      this.eventEmitterService.subsVar = this.eventEmitterService.    
+    if (this.eventEmitterService.subsVar1 == undefined) {    
+      this.eventEmitterService.subsVar1 = this.eventEmitterService.    
       invokeScrollComponentFunction.subscribe((object:any) => {    
         this.addNewCard(object);    
       });    

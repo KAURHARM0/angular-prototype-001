@@ -16,8 +16,8 @@ export class RuleExpressionComponent implements OnInit  {
   btns = ["(",")","AND","OR"];
 
   ngOnInit() {
-    if (this.eventEmitterService.subsVar == undefined) {    
-      this.eventEmitterService.subsVar = this.eventEmitterService.    
+    if (this.eventEmitterService.subsVar2 == undefined) {    
+      this.eventEmitterService.subsVar2 = this.eventEmitterService.    
       invokeExpressionComponentFunction.subscribe((object:any) => {    
         this.addToExpression(object);    
       });    
