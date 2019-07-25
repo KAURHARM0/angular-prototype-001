@@ -26,7 +26,7 @@ export class ConditionListComponent implements OnInit  {
   
   handleClick(message){
     debugger;
-    this.eventEmitterService.onFirstComponentButtonClick(message);
+    this.eventEmitterService.onScrollComponentButtonClick(message);
     // NgbdCarouselBasic.addNewCard(message);
   }
 }

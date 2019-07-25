@@ -12,7 +12,7 @@ export class EventEmitterService {
     
   constructor() { }    
     
-  onFirstComponentButtonClick(object:any) {    
+  onScrollComponentButtonClick(object:any) {    
     this.invokeScrollComponentFunction.emit(object);    
   }    
 
