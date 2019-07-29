@@ -4,22 +4,19 @@ import { Component  } from '@angular/core';
 import { EventEmitterService } from '../providers/event-emitter.service';
 import { CartValueComponent } from '../templates/cartValueCondition/cartValueCondition.component';
 import { CardComponent } from '../CardComponent';
+import sampleData from '../assets/json/data.json';
 
 @Component({selector: 'scroll-carousel', 
 templateUrl: './scroll-carousel.component.html', 
 styleUrls: ['./scroll-carousel.component.css']})
 
 export class ScrollCarouselComponent implements OnInit  {
-  instances = { "Cart Value Condition": ["CV",1] ,
-  "Qualifying Product Condition": ["QP",1], 
-  "Individual Product Condition": ["IP",1], 
-  "Total Cart Quantity Condition": ["TCQ",1], 
-  "Individual Product Quantity Condition": ["IPQ",1], 
-  "Account Condition": ["AC",1]};
+  instances: any = sampleData.instances;
   
-@ViewChild('inner', {read: ViewContainerRef, static: false}) inner;
-constructor(    
-    private eventEmitterService: EventEmitterService, private resolver: ComponentFactoryResolver
+  @ViewChild('inner', {read: ViewContainerRef, static: false}) inner;
+  
+  constructor(    
+      private eventEmitterService: EventEmitterService, private resolver: ComponentFactoryResolver
   ) { } 
 
   ngOnInit(){

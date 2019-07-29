@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EventEmitterService } from '../providers/event-emitter.service';
+import sampleData from '../assets/json/data.json';
 
 import {ViewChild, ElementRef, AfterViewInit} from '@angular/core';
 
@@ -13,7 +14,8 @@ export class RuleExpressionComponent implements OnInit  {
     private eventEmitterService: EventEmitterService
   ) { } 
 
-  btns = ["(",")","AND","OR"];
+  btns: any = sampleData.buttons;
+  // ["(",")","AND","OR"];
 
   ngOnInit() {
     if (this.eventEmitterService.subsVar2 == undefined) {    

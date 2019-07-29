@@ -6,5 +6,14 @@
     {"name":"Individual Product Quantity Condition", "subject":"detail", "content":"detail", "color":"yellow"},
     {"name":"Total Cart Quantity Condition", "subject":"detail", "content":"detail", "color":"pink"},
     {"name":"Account Condition", "subject":"detail", "content":"detail", "color":"purple"}
-  ]
+  ],
+  "instances" : { 
+    "Cart Value Condition": ["CV","1"],
+    "Qualifying Product Condition": ["QP","1"], 
+    "Individual Product Condition": ["IP","1"], 
+    "Total Cart Quantity Condition": ["TCQ","1"], 
+    "Individual Product Quantity Condition": ["IPQ","1"], 
+    "Account Condition": ["AC","1"]
+  },
+  "buttons" : ["(",")","AND","OR"]
 }
