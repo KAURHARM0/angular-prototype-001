@@ -32,26 +32,42 @@ constructor(
   }
 
   addNewCard(object){
-    debugger;
+    // debugger;
     var componentRef, data = {name: "", code: "", instance: 1};
-    if (object.name == "Cart Value Condition") {
-      const factory = this.resolver.resolveComponentFactory(CartValueComponent);
-      componentRef = this.inner.createComponent(factory); 
-    } else if (object.name == "Qualifying Product Condition") {
-      const factory = this.resolver.resolveComponentFactory(CartValueComponent);
-      componentRef = this.inner.createComponent(factory); 
-    } else if (object.name == "Individual Product Condition") {
-      const factory = this.resolver.resolveComponentFactory(CartValueComponent);
-      componentRef = this.inner.createComponent(factory); 
-    } else if (object.name == "Total Cart Quantity Condition") {
-      const factory = this.resolver.resolveComponentFactory(CartValueComponent);
-      componentRef = this.inner.createComponent(factory); 
-    } else if (object.name == "Individual Product Quantity Condition") {
-      const factory = this.resolver.resolveComponentFactory(CartValueComponent);
-      componentRef = this.inner.createComponent(factory); 
-    } else if (object.name == "Account Condition") {
-      const factory = this.resolver.resolveComponentFactory(CartValueComponent);
-      componentRef = this.inner.createComponent(factory); 
+    // const factory;
+    switch(object.name) {
+      case "Cart Value Condition": {
+        const factory = this.resolver.resolveComponentFactory(CartValueComponent);
+        componentRef = this.inner.createComponent(factory); 
+        break;
+      }
+      case "Qualifying Product Condition": {
+        const factory = this.resolver.resolveComponentFactory(CartValueComponent);
+        componentRef = this.inner.createComponent(factory);
+        break;
+      } 
+      case "Individual Product Condition": {
+        const factory = this.resolver.resolveComponentFactory(CartValueComponent);
+        componentRef = this.inner.createComponent(factory);
+        break;
+      }
+      case "Total Cart Quantity Condition": {
+        const factory = this.resolver.resolveComponentFactory(CartValueComponent);
+        componentRef = this.inner.createComponent(factory);
+        break;
+      }
+      case "Individual Product Quantity Condition": {
+        const factory = this.resolver.resolveComponentFactory(CartValueComponent);
+        componentRef = this.inner.createComponent(factory);
+        break;
+      }
+      case "Account Condition": {
+        const factory = this.resolver.resolveComponentFactory(CartValueComponent);
+        componentRef = this.inner.createComponent(factory);
+        break;
+      }
+      default:
+        // code block
     }
 
     data.name = object.name;

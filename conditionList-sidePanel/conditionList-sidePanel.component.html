@@ -1,9 +1,9 @@
 <mat-list style="width: 100%;">
-	<mat-list-item *ngFor="let message of messages" (click)="handleClick(message)" style="width: 90%;">
-		<h3 matLine><b> {{message.name}}</b> </h3>
+	<mat-list-item *ngFor="let condition of conditions" (click)="handleClick(condition)" style="width: 90%;">
+		<h3 matLine><b> {{condition.name}}</b> </h3>
 		<p matLine>
-			<span> {{message.subject}} </span>
-      <span class="demo-2"> -- {{message.content}} </span>
+			<span> {{condition.subject}} </span>
+      <span class="demo-2"> -- {{condition.content}} </span>
     </p>
   </mat-list-item>
 </mat-list>
