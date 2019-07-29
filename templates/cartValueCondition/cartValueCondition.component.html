@@ -3,93 +3,110 @@
 		<div class="card-header" align-items="center">
 			<h6 class="float-left" vertical-align="baseline">{{data.name}} - {{data.code}}{{data.instance}}</h6>
 			<div class="float-right">
-				<button class="example-icon" (click)="onAddButtonClick(data)">Add</button>
-        <button class="example-icon" #deleteBtn>Delete</button>
+				<!-- <button class="example-icon" (click)="onAddButtonClick(data)">Add</button>
+        <button class="example-icon" #deleteBtn>Delete</button> -->
+        <button mat-icon-button (click)="onAddButtonClick(data)"><mat-icon>add</mat-icon></button>
+        <button mat-icon-button #deleteBtn (click)="handleDrawer()"><mat-icon>delete</mat-icon></button>
       </div>
     </div>
     <div class="card-body">
       <!-- <p class="card-text">Some quick example text</p>
       <a href="#" class="btn btn-primary">Go somewhere</a> -->
       <div>
-        <!-- <form>
-          <div>
-            <label>Float label: </label>
-            <mat-radio-group formControlName="floatLabel">
-              <mat-radio-button value="auto">Auto</mat-radio-button>
-              <mat-radio-button value="always">Always</mat-radio-button>
-              <mat-radio-button value="never">Never</mat-radio-button>
-            </mat-radio-group>
-          </div>
-        </form> -->
-        <!-- <mat-select> -->
-                  <!-- <mat-option *ngFor="let food of foods" [value]="food.value"> -->
-                  <!-- <mat-option value="pl">Promotion List</mat-option>
-                  <mat-option value="pc">Product Category</mat-option>
-                  <mat-option value="fe">Free Entry</mat-option>
-                </mat-select> -->
         <form class="form-horizontal" [formGroup]="cartValueForm" (ngSubmit)="onSubmit()">
-          
           <mat-grid-list cols="1" rowHeight="70px" role="list">
             <mat-grid-tile role="listitem">
-              <!-- <mat-form-field> -->
-                <div>
                 <mat-label style="margin-right: 10px;">Product Filter:</mat-label>
-                  <!-- <input type="text" formControlName="firstName" required> -->
-                <select formControlName="productFilter">
+                <mat-select formControlName="productFilter">
                   <!-- <mat-option *ngFor="let food of foods" [value]="food.value"> -->
-                  <option value="pl">Promotion List</option>
-                  <option value="pc">Product Category</option>
-                  <option value="fe">Free Entry</option>
-                </select>
-                </div>
-              <!-- </mat-form-field> -->
+                  <mat-option value="no">None</mat-option>
+                  <mat-option value="pl">Promotion List</mat-option>
+                  <mat-option value="pc">Product Category</mat-option>
+                  <mat-option value="fe">Free Entry</mat-option>
+                </mat-select>
+            </mat-grid-tile>
+            <mat-grid-tile  role="listitem">
+              <mat-select *ngIf=true formControlName="productFilterValue">
+                <!-- <mat-option *ngFor="let food of foods" [value]="food.value"> -->
+                  <mat-option value="no">None</mat-option>
+              </mat-select>
+              <mat-select *ngIf=false formControlName="productFilterValue">
+                <!-- <mat-option *ngFor="let food of foods" [value]="food.value"> -->
+                  <mat-option value="pc">Product Category</mat-option>
+              </mat-select>
             </mat-grid-tile>
             <mat-grid-tile role="listitem">
-              <label class="cols" style="margin-right: 10px;">Occurence:</label>
-              <!-- <input type="text" formControlName="lastName">    -->
-              <!-- <div>
-                <input type="radio" id="occurenceChoice1" name="occurence" value="once">
-                <label for="occurenceChoice1" style="margin-right: 10px;">Once</label>
-
-                <input type="radio" id="occurenceChoice2" name="occurence" value="every">
-                <label for="occurenceChoice2" style="margin-right: 10px;">Every</label>
-              </div> -->
-              <mat-radio-group aria-label="Select an option">
-  <mat-radio-button value="1">Option 1</mat-radio-button>
-  <mat-radio-button value="2">Option 2</mat-radio-button>
-</mat-radio-group>
+                <mat-label style="margin-right: 10px;">Occurence:</mat-label>
+                <mat-radio-group aria-label="Select an option" required formControlName="occurence">
+                  <mat-radio-button checked value="1">Once</mat-radio-button>
+                  <mat-radio-button value="2">Every</mat-radio-button>
+                </mat-radio-group>
             </mat-grid-tile>
+            <mat-grid-tile role="listitem">
+                <mat-label style="margin-right: 10px;">Operator:</mat-label>
+                <mat-select formControlName="operator">
+                  <!-- <mat-option *ngFor="let food of foods" [value]="food.value"> -->
+                  <mat-option value="1">></mat-option>
+                  <mat-option value="2">>=</mat-option>
+                  <mat-option value="3">=</mat-option>
+                  <mat-option value="4"><=</mat-option>
+                  <mat-option value="5"><</mat-option>
+                </mat-select>
+            </mat-grid-tile>
+            <mat-grid-tile role="listitem">
+                <mat-label style="margin-right: 10px;">Currency:</mat-label>
+                <mat-select formControlName="currency">
+                  <!-- <mat-option *ngFor="let food of foods" [value]="food.value"> -->
+                  <mat-option value="1">EUR</mat-option>
+                  <mat-option value="2">USD</mat-option>
+                  <mat-option value="3">INR</mat-option>
+                </mat-select>
+            </mat-grid-tile>
+            <mat-grid-tile role="listitem">
+                <mat-label style="margin-right: 10px;">Value Type:</mat-label>
+                <mat-radio-group aria-label="Select an option" required (change)="scalesFlagChanged()" formControlName="valueType">
+                  <mat-radio-button checked value="1">Single</mat-radio-button>
+                  <mat-radio-button value="2">Scales</mat-radio-button>
+                </mat-radio-group>
+            </mat-grid-tile>
+            <mat-grid-tile  role="listitem">
+              <div *ngIf="!hasScales">
+                <label style="margin-right: 10px;">Value:</label>
+                <input placeholder="Enter value ...">
+              </div>
+              <button  *ngIf="hasScales" class="example-icon" (click)="maintainScales()">Maintain scales</button>
+            </mat-grid-tile> 
           </mat-grid-list>
           
             <div formGroupName="address">
-                      <h6>Address</h6>
-                      <mat-grid-list cols="1"  rowHeight="70px">
-                        <mat-grid-tile>
-                          <label>
-                            Street:
-                            <input type="text" formControlName="street">
-                          </label>
-                        </mat-grid-tile>
-                        <mat-grid-tile>
-                          <label>
-                            City:
-                            <input type="text" formControlName="city">
-                          </label>
-                        </mat-grid-tile>
-                        <mat-grid-tile>
-                          <label>
-                            State:
-                            <input type="text" formControlName="state">
-                          </label>
-                        </mat-grid-tile>
-                        <mat-grid-tile>
-                          <label>
-                            Zip Code:
-                            <input type="text" formControlName="zip">
-                          </label>
-                        </mat-grid-tile>
-                      </mat-grid-list>
-                    </div>
+              <h6>Address</h6>
+              <mat-grid-list cols="1"  rowHeight="70px">
+                <mat-grid-tile>
+                  <label>
+                    Street:
+                    <input type="text" formControlName="street">
+                  </label>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                  <label>
+                    City:
+                    <input type="text" formControlName="city">
+                  </label>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                  <label>
+                    State:
+                    <input type="text" formControlName="state">
+                  </label>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                  <label>
+                    Zip Code:
+                    <input type="text" formControlName="zip">
+                  </label>
+                </mat-grid-tile>
+              </mat-grid-list>
+            </div>
           <!-- <div formArrayName="aliases">
             <h3>Aliases</h3> <button (click)="addAlias()">Add Alias</button>
 
@@ -106,4 +123,3 @@
     </div>
   </div>
 </div>
-<!-- <ng-content></ng-content> -->

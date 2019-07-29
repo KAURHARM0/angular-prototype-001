@@ -3,12 +3,13 @@
 		<ngb-panel id="panel1" style="height: 100%;">
       <ng-template ngbPanelHeader>
         <div class="d-flex align-items-center justify-content-between">
+          <button mat-icon-button (click)="handleDrawer()"><mat-icon>menu</mat-icon></button>
           <button ngbPanelToggle class="btn btn-link btn-lg container-fluid text-left pl-1" style="color: black;"><b>Rule</b></button>
         </div>
       </ng-template>
 			<ng-template ngbPanelContent>
 				<mat-drawer-container class="example-container" hasBackdrop="false" style="width: 100%;">
-					<mat-drawer mode="push" opened style="width: 20%;">
+					<mat-drawer #drawer mode="side" opened style="width: 20%;">
             <mat-toolbar><p>Conditions</p></mat-toolbar>
 						<condition-list></condition-list>
 					</mat-drawer>

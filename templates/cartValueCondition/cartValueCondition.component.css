@@ -37,3 +37,12 @@ card-deck {
 mat-radio-button {
   margin: 0 12px;
 }
+
+mat-select {
+  border-bottom: 1px solid silver;
+}
+
+input {
+  border: 0px;
+  border-bottom: 1px solid silver;
+}

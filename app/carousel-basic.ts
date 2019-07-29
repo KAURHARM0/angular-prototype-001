@@ -8,9 +8,8 @@ import { CartValueComponent } from '../templates/cartValueCondition/cartValueCon
 templateUrl: './scratch.html', 
 styleUrls: ['./carousel-basic.css']})
 export class NgbdCarouselBasic implements OnInit  {
-  
-  // @ViewChild('acc', {read: ElementRef, static: false}) acoordianRef: ElementRef;
   @ViewChild('ruleDefinition', {static: false}) ruleDefinition: ElementRef;
+  @ViewChild('drawer', {static: false}) drawer: ElementRef;
   @ViewChild('addCard', {static: false}) addCard: TemplateRef<any>;
   @ViewChild('inner', {read: ViewContainerRef, static: false}) inner;
 
@@ -27,6 +26,10 @@ export class NgbdCarouselBasic implements OnInit  {
     //     this.addNewCard(object);    
     //   });    
     // }
+  }
+
+  handleDrawer(event) {
+    this.drawer.toggle();
   }
 
   ngAfterViewInit() {

@@ -8,7 +8,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { CartValueComponent } from '../templates/cartValueCondition/cartValueCondition.component';
 import { ScrollCarouselComponent } from '../scroll-carousel/scroll-carousel.component';
-import { ConditionDetailsComponent } from '../condition-details/condition-details.component';
+// import { ConditionDetailsComponent } from '../condition-details/condition-details.component';
 import { ConditionListComponent } from '../conditionList-sidePanel/conditionList-sidePanel.component';
 import { RuleDefinitionComponent } from '../rule-definition-content/rule-definition-content.component';
 import { RuleExpressionComponent } from '../rule-expression/rule-expression.component';
@@ -25,7 +25,7 @@ import { NgbdCarouselBasic } from './carousel-basic';
   declarations: [NgbdCarouselBasic, 
     CartValueComponent,
     ScrollCarouselComponent, 
-    ConditionDetailsComponent, 
+    // ConditionDetailsComponent, 
     ConditionListComponent, 
     RuleDefinitionComponent, 
     RuleExpressionComponent,],

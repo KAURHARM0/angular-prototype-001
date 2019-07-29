@@ -1,0 +1,65 @@
+mat-drawer-content {
+  padding: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: flex-start;
+  /* display: block; */
+  min-height: 100%;
+  height: fit-content;
+}
+
+ngb-panel {
+  padding: 12px;
+  margin: 12px;
+  height: auto;
+  /* resize: vertical; */
+}
+
+.card-text{
+  word-wrap: break-word;
+}
+
+ngb-accordion {
+  height: auto;
+}
+
+mat-drawer{
+  width: 100%;
+  border-right: 1px solid silver;
+  display: flex;
+  height: auto;
+  /* display: block; */
+  min-height: 100%;
+  overflow: auto;
+}
+
+mat-drawer-container{
+  border-radius: 5px;
+  width: 100%;
+  /* height: auto; */
+  /* display: block; */
+  display: flex;
+  min-height: 100%;
+  height: fit-content;
+  margin: 0px;
+  border: 1px solid silver;
+  overflow: auto;
+  /* resize: vertical; */
+}
+
+mat-divider {
+  width: 99%; 
+  margin: 10px;
+  color: grey;
+}
+
+mat-toolbar{
+  border-bottom: 1px solid silver; 
+}
+
+mat-toolbar>p{
+
+  font-weight: bold;
+  font-size: large;
+}

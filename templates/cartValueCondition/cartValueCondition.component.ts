@@ -12,9 +12,15 @@ styleUrls: ['./cartValueCondition.component.css']})
 export class CartValueComponent implements OnInit  {
   @Input() data: any;
   @ViewChild('deleteBtn', {static: true}) DelBtn: ElementRef;
+  hasScales: boolean = false;
 
   cartValueForm = this.fb.group({
     productFilter: ['', Validators.required],
+    productFilterValue: ['', Validators.required],
+    occurence: ['', Validators.required],
+    operator: ['', Validators.required],
+    currency: ['', Validators.required],
+    valueType: ['',Validators.required],
     firstName: ['', Validators.required],
     lastName: [''],
     address: this.fb.group({
@@ -39,5 +45,9 @@ export class CartValueComponent implements OnInit  {
     console.log(this.DelBtn.nativeElement);
     // this.DelBtn.nativeElement.disabled = true;
 
+  }
+
+  scalesFlagChanged(event){
+    this.hasScales = !this.hasScales;
   }
 }
