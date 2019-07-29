@@ -33,3 +33,7 @@ card-deck {
   margin:10px;
   max-width: 100%;
 }
+
+mat-radio-button {
+  margin: 0 12px;
+}

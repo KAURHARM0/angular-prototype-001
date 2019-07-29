@@ -11,15 +11,96 @@
       <!-- <p class="card-text">Some quick example text</p>
       <a href="#" class="btn btn-primary">Go somewhere</a> -->
       <div>
-        <form>
+        <!-- <form>
           <div>
-      <label>Float label: </label>
-      <mat-radio-group formControlName="floatLabel">
-        <mat-radio-button value="auto">Auto</mat-radio-button>
-        <mat-radio-button value="always">Always</mat-radio-button>
-        <mat-radio-button value="never">Never</mat-radio-button>
-      </mat-radio-group>
-    </div>
+            <label>Float label: </label>
+            <mat-radio-group formControlName="floatLabel">
+              <mat-radio-button value="auto">Auto</mat-radio-button>
+              <mat-radio-button value="always">Always</mat-radio-button>
+              <mat-radio-button value="never">Never</mat-radio-button>
+            </mat-radio-group>
+          </div>
+        </form> -->
+        <!-- <mat-select> -->
+                  <!-- <mat-option *ngFor="let food of foods" [value]="food.value"> -->
+                  <!-- <mat-option value="pl">Promotion List</mat-option>
+                  <mat-option value="pc">Product Category</mat-option>
+                  <mat-option value="fe">Free Entry</mat-option>
+                </mat-select> -->
+        <form class="form-horizontal" [formGroup]="cartValueForm" (ngSubmit)="onSubmit()">
+          
+          <mat-grid-list cols="1" rowHeight="70px" role="list">
+            <mat-grid-tile role="listitem">
+              <!-- <mat-form-field> -->
+                <div>
+                <mat-label style="margin-right: 10px;">Product Filter:</mat-label>
+                  <!-- <input type="text" formControlName="firstName" required> -->
+                <select formControlName="productFilter">
+                  <!-- <mat-option *ngFor="let food of foods" [value]="food.value"> -->
+                  <option value="pl">Promotion List</option>
+                  <option value="pc">Product Category</option>
+                  <option value="fe">Free Entry</option>
+                </select>
+                </div>
+              <!-- </mat-form-field> -->
+            </mat-grid-tile>
+            <mat-grid-tile role="listitem">
+              <label class="cols" style="margin-right: 10px;">Occurence:</label>
+              <!-- <input type="text" formControlName="lastName">    -->
+              <!-- <div>
+                <input type="radio" id="occurenceChoice1" name="occurence" value="once">
+                <label for="occurenceChoice1" style="margin-right: 10px;">Once</label>
+
+                <input type="radio" id="occurenceChoice2" name="occurence" value="every">
+                <label for="occurenceChoice2" style="margin-right: 10px;">Every</label>
+              </div> -->
+              <mat-radio-group aria-label="Select an option">
+  <mat-radio-button value="1">Option 1</mat-radio-button>
+  <mat-radio-button value="2">Option 2</mat-radio-button>
+</mat-radio-group>
+            </mat-grid-tile>
+          </mat-grid-list>
+          
+            <div formGroupName="address">
+                      <h6>Address</h6>
+                      <mat-grid-list cols="1"  rowHeight="70px">
+                        <mat-grid-tile>
+                          <label>
+                            Street:
+                            <input type="text" formControlName="street">
+                          </label>
+                        </mat-grid-tile>
+                        <mat-grid-tile>
+                          <label>
+                            City:
+                            <input type="text" formControlName="city">
+                          </label>
+                        </mat-grid-tile>
+                        <mat-grid-tile>
+                          <label>
+                            State:
+                            <input type="text" formControlName="state">
+                          </label>
+                        </mat-grid-tile>
+                        <mat-grid-tile>
+                          <label>
+                            Zip Code:
+                            <input type="text" formControlName="zip">
+                          </label>
+                        </mat-grid-tile>
+                      </mat-grid-list>
+                    </div>
+          <!-- <div formArrayName="aliases">
+            <h3>Aliases</h3> <button (click)="addAlias()">Add Alias</button>
+
+            <div *ngFor="let address of aliases.controls; let i=index">
+              <label>
+                Alias:
+                <input type="text" [formControlName]="i">
+              </label>
+            </div>
+          </div> -->
+          <!-- <button type="submit" [disabled]="!profileForm.valid">Submit</button> -->
         </form>
       </div>
     </div>
