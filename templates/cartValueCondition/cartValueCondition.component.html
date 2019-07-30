@@ -17,7 +17,7 @@
           <mat-grid-list cols="1" rowHeight="70px" role="list">
             <mat-grid-tile role="listitem">
                 <mat-label style="margin-right: 10px;">Product Filter:</mat-label>
-                <mat-select formControlName="productFilter">
+                <mat-select #filter formControlName="productFilter" (selectionChange)="productFilterChange(filter.value)">
                   <!-- <mat-option *ngFor="let food of foods" [value]="food.value"> -->
                   <mat-option value="no">None</mat-option>
                   <mat-option value="pl">Promotion List</mat-option>
@@ -26,7 +26,7 @@
                 </mat-select>
             </mat-grid-tile>
             <mat-grid-tile  role="listitem">
-              <mat-select *ngIf=true formControlName="productFilterValue">
+              <mat-select *ngIf=true formControlName="productFilterValue" placeholder="Product Filter Value">
                 <!-- <mat-option *ngFor="let food of foods" [value]="food.value"> -->
                   <mat-option value="no">None</mat-option>
               </mat-select>
@@ -78,7 +78,7 @@
             </mat-grid-tile> 
           </mat-grid-list>
           
-            <div formGroupName="address">
+            <!-- <div formGroupName="address">
               <h6>Address</h6>
               <mat-grid-list cols="1"  rowHeight="70px">
                 <mat-grid-tile>
@@ -106,7 +106,7 @@
                   </label>
                 </mat-grid-tile>
               </mat-grid-list>
-            </div>
+            </div> -->
           <!-- <div formArrayName="aliases">
             <h3>Aliases</h3> <button (click)="addAlias()">Add Alias</button>
 

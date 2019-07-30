@@ -50,4 +50,8 @@ export class CartValueComponent implements OnInit  {
   scalesFlagChanged(event){
     this.hasScales = !this.hasScales;
   }
+
+  productFilterChange(value){
+    debugger;
+  }
 }
