@@ -1,4 +1,4 @@
-<div class="col-3">
+<div #instance class="col-3">
 	<div class="card active">
 		<div class="card-header" align-items="center">
 			<h6 class="float-left" vertical-align="baseline">{{data.name}} - {{data.code}}{{data.instance}}</h6>
@@ -6,7 +6,7 @@
 				<!-- <button class="example-icon" (click)="onAddButtonClick(data)">Add</button>
         <button class="example-icon" #deleteBtn>Delete</button> -->
         <button mat-icon-button (click)="onAddButtonClick(data)"><mat-icon>add</mat-icon></button>
-        <button mat-icon-button #deleteBtn (click)="handleDrawer()"><mat-icon>delete</mat-icon></button>
+        <button mat-icon-button #deleteBtn (click)="onDeleteButtonClick(data, instance)"><mat-icon>delete</mat-icon></button>
       </div>
     </div>
     <div class="card-body">

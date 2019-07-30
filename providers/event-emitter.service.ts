@@ -6,18 +6,24 @@ import { Subscription } from 'rxjs/internal/Subscription';
 })    
 export class EventEmitterService {    
     
-  invokeScrollComponentFunction = new EventEmitter(); 
+  invokeScrollComponentAddFunction = new EventEmitter();
+  invokeScrollComponentDeleteFunction = new EventEmitter(); 
   invokeExpressionComponentFunction = new EventEmitter();    
   subsVar1: Subscription;  
-  subsVar2: Subscription;    
+  subsVar2: Subscription; 
+  subsVar3: Subscription;    
     
   constructor() { }    
     
-  onScrollComponentButtonClick(object:any) {    
-    this.invokeScrollComponentFunction.emit(object);    
+  onConditionListButtonClick(object:any) {    
+    this.invokeScrollComponentAddFunction.emit(object);    
   }    
 
   onCardAddButtonClick(object:any) {
-  this.invokeExpressionComponentFunction.emit(object); 
-  }   
+    this.invokeExpressionComponentFunction.emit(object); 
+  } 
+
+  onCardDeleteButtonClick(object:any){
+    this.invokeScrollComponentDeleteFunction.emit(object);
+  }  
 } 

@@ -21,8 +21,6 @@ export class CartValueComponent implements OnInit  {
     operator: ['', Validators.required],
     currency: ['', Validators.required],
     valueType: ['',Validators.required],
-    firstName: ['', Validators.required],
-    lastName: [''],
     address: this.fb.group({
       street: [''],
       city: [''],
@@ -40,11 +38,15 @@ export class CartValueComponent implements OnInit  {
 
   ngOnInit(){}
   onAddButtonClick(data){
-    debugger;
     this.eventEmitterService.onCardAddButtonClick(data);
     console.log(this.DelBtn.nativeElement);
+    // debugger; 
     // this.DelBtn.nativeElement.disabled = true;
 
+  }
+
+  onDeleteButtonClick(data, instance){
+    this.eventEmitterService.onCardDeleteButtonClick(data.index);
   }
 
   scalesFlagChanged(event){

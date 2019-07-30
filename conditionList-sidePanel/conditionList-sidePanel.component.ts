@@ -20,6 +20,6 @@ export class ConditionListComponent implements OnInit  {
   
   handleClick(condition){
     // debugger;
-    this.eventEmitterService.onScrollComponentButtonClick(condition);
+    this.eventEmitterService.onConditionListButtonClick(condition);
   }
 }
