@@ -17,9 +17,10 @@ import { ScalesDialog } from '../dialogBoxes/scales/scales-dialog';
 import { CreateNewRuleComponent } from '../newRuleCreation/newRuleCreation.component';
 import { PageNotFoundComponent } from './pageNotFound';
 import { Basic } from './basic.component';
+
 import { AppRoutingModule }        from './app-routing.module';
 
-import { NgbdCarouselBasic } from './carousel-basic';
+import { AppComponent } from './app';
 
 @NgModule({
   imports: [BrowserModule, 
@@ -29,7 +30,7 @@ import { NgbdCarouselBasic } from './carousel-basic';
     ReactiveFormsModule,
     AppRoutingModule
     ],
-  declarations: [NgbdCarouselBasic, 
+  declarations: [AppComponent, 
     CartValueComponent,
     ScrollCarouselComponent, 
     // ConditionDetailsComponent, 
@@ -41,12 +42,12 @@ import { NgbdCarouselBasic } from './carousel-basic';
     PageNotFoundComponent,
     Basic],
   // schemas:[CUSTOM_ELEMENTS_SCHEMA],
-  exports: [NgbdCarouselBasic, 
+  exports: [AppComponent, 
     ControlsMaterialModule,
     CreateNewRuleComponent
     ],
   entryComponents: [ CartValueComponent, ScalesDialog ],
   providers: [ EventEmitterService ],
-  bootstrap: [ NgbdCarouselBasic ]
+  bootstrap: [ AppComponent ]
 })
-export class NgbdCarouselBasicModule {}
+export class AppModule {}
