@@ -14,7 +14,9 @@ import { ConditionListComponent } from '../conditionList-sidePanel/conditionList
 import { RuleDefinitionComponent } from '../rule-definition-content/rule-definition-content.component';
 import { RuleExpressionComponent } from '../rule-expression/rule-expression.component';
 import { ScalesDialog } from '../dialogBoxes/scales/scales-dialog';
-
+import { CreateNewRuleComponent } from '../newRuleCreation/newRuleCreation.component';
+import { PageNotFoundComponent } from './pageNotFound';
+import { Basic } from './basic.component';
 import { AppRoutingModule }        from './app-routing.module';
 
 import { NgbdCarouselBasic } from './carousel-basic';
@@ -34,10 +36,14 @@ import { NgbdCarouselBasic } from './carousel-basic';
     ConditionListComponent, 
     ScalesDialog,
     RuleDefinitionComponent, 
-    RuleExpressionComponent,],
+    RuleExpressionComponent,
+    CreateNewRuleComponent,
+    PageNotFoundComponent,
+    Basic],
   // schemas:[CUSTOM_ELEMENTS_SCHEMA],
   exports: [NgbdCarouselBasic, 
-    ControlsMaterialModule
+    ControlsMaterialModule,
+    CreateNewRuleComponent
     ],
   entryComponents: [ CartValueComponent, ScalesDialog ],
   providers: [ EventEmitterService ],

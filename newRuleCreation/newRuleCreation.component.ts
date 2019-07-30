@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, TemplateRef, ViewContainerRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, TemplateRef, ViewContainerRef, ComponentFactoryResolver } from '@angular/core';
 import { EventEmitterService } from '../providers/event-emitter.service';
 
 @Component({selector: 'create-new-rule', 

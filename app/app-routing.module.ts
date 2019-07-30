@@ -3,11 +3,16 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { CreateNewRuleComponent } from '../newRuleCreation/newRuleCreation.component';
 import { PageNotFoundComponent } from './pageNotFound';
+import { Basic } from './basic.component';
 
 const appRoutes: Routes = [
   {
     path: 'createRule',
     component: CreateNewRuleComponent
+  },
+  {
+    path: '',
+    component: Basic
   },
   // {
   //   path: 'admin',

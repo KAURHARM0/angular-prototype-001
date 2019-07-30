@@ -37,5 +37,9 @@ export class NgbdCarouselBasic implements OnInit  {
   ngAfterViewInit() {
   //  console.log(this.ruleDefinition);
   }
+
+  routeToCreateRule(){
+    
+  }
   
 }
