@@ -10,6 +10,7 @@ styleUrls: ['./rule-expression.component.css']})
 
 export class RuleExpressionComponent implements OnInit  {
   @ViewChild('ruleDefinition', {static: false}) ruleDefinition: ElementRef;
+  @ViewChild('drawerToggle', {static: false}) drawerToggle: ElementRef;
   constructor(    
     private eventEmitterService: EventEmitterService
   ) { } 
@@ -44,5 +45,12 @@ export class RuleExpressionComponent implements OnInit  {
 
   onExpResetButtonClick(){
     this.ruleDefinition.nativeElement.innerHTML = "";
+  }
+
+  handleDrawer(){
+    this.eventEmitterService.onDrawerToggleClick();
+    
+    // debugger;
+    //  this.drawerToggle.addStyleClass('drawerToggle');
   }
 }

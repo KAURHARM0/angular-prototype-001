@@ -20,15 +20,15 @@ export class NgbdCarouselBasic implements OnInit  {
   ) { }  
 
   ngOnInit(){
-    // if (this.eventEmitterService.subsVar == undefined) {    
-    //   this.eventEmitterService.subsVar = this.eventEmitterService.    
-    //   invokeFirstComponentFunction.subscribe((object:any) => {    
-    //     this.addNewCard(object);    
-    //   });    
-    // }
+    if (this.eventEmitterService.subsVar4 == undefined) {    
+      this.eventEmitterService.subsVar4 = this.eventEmitterService.    
+      invokeDrawerToggleFunction.subscribe((object:any) => {    
+        this.handleDrawer();    
+      });    
+    }
   }
 
-  handleDrawer(event) {
+  handleDrawer() {
     this.drawer.toggle();
   }
 

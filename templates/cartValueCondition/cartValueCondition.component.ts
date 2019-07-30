@@ -1,9 +1,13 @@
 import { Component, OnInit, Input, ElementRef, ViewChild } from '@angular/core';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { EventEmitterService } from '../../providers/event-emitter.service'; 
 
 import { FormBuilder } from '@angular/forms';
 import { Validators } from '@angular/forms';
 import { FormArray } from '@angular/forms'; 
+
+import { ScalesDialog } from '../../dialogBoxes/scales/scales-dialog';
+import { DialogData } from '../../dialogBoxes/scales/scales-dialog';
 
 @Component({selector: 'cart-value-card', 
 templateUrl: './cartValueCondition.component.html', 
@@ -13,6 +17,7 @@ export class CartValueComponent implements OnInit  {
   @Input() data: any;
   @ViewChild('deleteBtn', {static: true}) DelBtn: ElementRef;
   hasScales: boolean = false;
+  animal: string;
 
   cartValueForm = this.fb.group({
     productFilter: ['', Validators.required],
@@ -33,7 +38,7 @@ export class CartValueComponent implements OnInit  {
   });
 
   constructor(    
-    private eventEmitterService: EventEmitterService, private fb: FormBuilder    
+    private eventEmitterService: EventEmitterService, private fb: FormBuilder, public dialog: MatDialog    
   ) { }
 
   ngOnInit(){}
@@ -55,5 +60,17 @@ export class CartValueComponent implements OnInit  {
 
   productFilterChange(value){
     debugger;
+  }
+
+  onMaintainScalesClick(){
+    const dialogRef = this.dialog.open(ScalesDialog, {
+      width: '250px',
+      data: {name: "Harmeet", animal: "Tiger"}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.animal = result;
+    });
   }
 }

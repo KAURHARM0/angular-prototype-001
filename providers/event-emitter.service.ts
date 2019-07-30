@@ -8,10 +8,12 @@ export class EventEmitterService {
     
   invokeScrollComponentAddFunction = new EventEmitter();
   invokeScrollComponentDeleteFunction = new EventEmitter(); 
-  invokeExpressionComponentFunction = new EventEmitter();    
+  invokeExpressionComponentFunction = new EventEmitter(); 
+  invokeDrawerToggleFunction = new EventEmitter();   
   subsVar1: Subscription;  
   subsVar2: Subscription; 
-  subsVar3: Subscription;    
+  subsVar3: Subscription;   
+  subsVar4: Subscription;    
     
   constructor() { }    
     
@@ -26,4 +28,9 @@ export class EventEmitterService {
   onCardDeleteButtonClick(object:any){
     this.invokeScrollComponentDeleteFunction.emit(object);
   }  
+
+  onDrawerToggleClick(){
+    this.invokeDrawerToggleFunction.emit();
+  }
+
 } 
