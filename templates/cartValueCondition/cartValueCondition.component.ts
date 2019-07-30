@@ -17,7 +17,7 @@ export class CartValueComponent implements OnInit  {
   @Input() data: any;
   @ViewChild('deleteBtn', {static: true}) DelBtn: ElementRef;
   hasScales: boolean = false;
-  animal: string;
+  scalesSaved: boolean = false;
 
   cartValueForm = this.fb.group({
     productFilter: ['', Validators.required],
@@ -62,6 +62,8 @@ export class CartValueComponent implements OnInit  {
     debugger;
   }
 
+  onSubmit(){console.log("In onSubmit");}
+
   onMaintainScalesClick(){
     const dialogRef = this.dialog.open(ScalesDialog, {
       width: '250px',
@@ -70,7 +72,11 @@ export class CartValueComponent implements OnInit  {
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
-      this.animal = result;
+      console.log(result);
+      if(result){
+        this.scalesSaved = true;
+      }
+      // this.animal = result;
     });
   }
 }

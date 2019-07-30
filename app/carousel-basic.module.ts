@@ -5,6 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EventEmitterService } from '../providers/event-emitter.service';
 import { ControlsMaterialModule } from '../material-module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import { CartValueComponent } from '../templates/cartValueCondition/cartValueCondition.component';
 import { ScrollCarouselComponent } from '../scroll-carousel/scroll-carousel.component';
@@ -12,6 +13,9 @@ import { ScrollCarouselComponent } from '../scroll-carousel/scroll-carousel.comp
 import { ConditionListComponent } from '../conditionList-sidePanel/conditionList-sidePanel.component';
 import { RuleDefinitionComponent } from '../rule-definition-content/rule-definition-content.component';
 import { RuleExpressionComponent } from '../rule-expression/rule-expression.component';
+import { ScalesDialog } from '../dialogBoxes/scales/scales-dialog';
+
+import { AppRoutingModule }        from './app-routing.module';
 
 import { NgbdCarouselBasic } from './carousel-basic';
 
@@ -20,20 +24,22 @@ import { NgbdCarouselBasic } from './carousel-basic';
     NgbModule, 
     BrowserAnimationsModule, 
     ControlsMaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AppRoutingModule
     ],
   declarations: [NgbdCarouselBasic, 
     CartValueComponent,
     ScrollCarouselComponent, 
     // ConditionDetailsComponent, 
     ConditionListComponent, 
+    ScalesDialog,
     RuleDefinitionComponent, 
     RuleExpressionComponent,],
   // schemas:[CUSTOM_ELEMENTS_SCHEMA],
   exports: [NgbdCarouselBasic, 
     ControlsMaterialModule
     ],
-  entryComponents: [ CartValueComponent ],
+  entryComponents: [ CartValueComponent, ScalesDialog ],
   providers: [ EventEmitterService ],
   bootstrap: [ NgbdCarouselBasic ]
 })

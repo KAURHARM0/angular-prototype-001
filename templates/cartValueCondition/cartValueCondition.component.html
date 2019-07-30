@@ -72,9 +72,12 @@
             <mat-grid-tile  role="listitem">
               <div *ngIf="!hasScales">
                 <label style="margin-right: 10px;">Value:</label>
-                <input placeholder="Enter value ...">
+                <input placeholder="Enter the value">
               </div>
-              <button  *ngIf="hasScales" class="example-icon" (click)="maintainScales()">Maintain scales</button>
+              <div *ngIf="hasScales">
+                <button class="example-icon" (click)="onMaintainScalesClick()">Maintain scales</button>
+                <h6 *ngIf="scalesSaved" class="saveText">Scales saved !</h6>
+              </div>
             </mat-grid-tile> 
           </mat-grid-list>
           
