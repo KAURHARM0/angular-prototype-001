@@ -1,3 +1,3 @@
-# angular-wk18x1
+# angular-prototype-001
 
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/angular-wk18x1)
+[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/angular-prototype-001)
