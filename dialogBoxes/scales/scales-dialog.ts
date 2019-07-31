@@ -8,7 +8,8 @@ export interface DialogData {
 
 @Component({
   selector: 'scales-dialog',
-  templateUrl: 'scales-dialog.html',
+  templateUrl: './scales-dialog.html',
+  styleUrls: ['./scales-dialog.css']
 })
 export class ScalesDialog {
 

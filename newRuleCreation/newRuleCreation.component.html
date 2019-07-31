@@ -1,5 +1,5 @@
 <div #owner>
-	<ngb-accordion #acc="ngbAccordion" activeIds="panel1">
+	<ngb-accordion #acc="ngbAccordion" activeIds="panel1" [destroyOnHide]="false" (panelChange)="panelchanged()">
 		<ngb-panel id="panel1" style="height: 100%;">
       <ng-template ngbPanelHeader>
         <div class="d-flex align-items-center justify-content-between">

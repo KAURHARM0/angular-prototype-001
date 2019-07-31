@@ -7,6 +7,7 @@ styleUrls: ['./newRuleCreation.component.css']})
 
 export class CreateNewRuleComponent implements OnInit  {
   @ViewChild('ruleDefinition', {static: false}) ruleDefinition: ElementRef;
+  @ViewChild('acc', {static: false}) acc: ElementRef;
   @ViewChild('drawer', {static: false}) drawer: ElementRef;
   @ViewChild('addCard', {static: false}) addCard: TemplateRef<any>;
   @ViewChild('inner', {read: ViewContainerRef, static: false}) inner;
@@ -32,5 +33,9 @@ export class CreateNewRuleComponent implements OnInit  {
 
   ngAfterViewInit() {
   //  console.log(this.ruleDefinition);
+  }
+
+  panelchanged(event: NgbPanelChangeEvent){
+   // debugger;
   }
 }
