@@ -1,5 +1,5 @@
 <mat-list style="width: 100%;">
-	<mat-list-item *ngFor="let condition of conditions" (click)="handleClick(condition)" style="width: 90%;">
+	<mat-list-item *ngFor="let condition of conditions" (click)="handleClick(condition)" style="width: 90%;"  [style.border-left-color]="condition.color">
 		<h3 matLine><b> {{condition.name}}</b> </h3>
 		<p matLine>
 			<span> {{condition.subject}} </span>
