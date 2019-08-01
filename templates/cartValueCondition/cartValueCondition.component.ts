@@ -18,6 +18,8 @@ export class CartValueComponent implements OnInit  {
   @ViewChild('deleteBtn', {static: true}) DelBtn: ElementRef;
   hasScales: boolean = false;
   scalesSaved: boolean = false;
+  chooseFilterValue = 0;
+  
 
   cartValueForm = this.fb.group({
     productFilter: ['', Validators.required],
@@ -26,15 +28,7 @@ export class CartValueComponent implements OnInit  {
     operator: ['', Validators.required],
     currency: ['', Validators.required],
     valueType: ['',Validators.required],
-    address: this.fb.group({
-      street: [''],
-      city: [''],
-      state: [''],
-      zip: ['']
-    }),
-    aliases: this.fb.array([
-      this.fb.control('')
-    ])
+    scales: [[]]
   });
 
   constructor(    
@@ -59,24 +53,40 @@ export class CartValueComponent implements OnInit  {
   }
 
   productFilterChange(value){
-    debugger;
+    if(value){
+      this.chooseFilterValue = 1;
+    }
   }
 
   onSubmit(){console.log("In onSubmit");}
 
   onMaintainScalesClick(){
+    let savedScales = "";
+    if(this.cartValueForm.value.scales.length) {
+      savedScales = this.cartValueForm.value.scales;
+    }
     const dialogRef = this.dialog.open(ScalesDialog, {
-      width: '250px',
-      data: {name: "Harmeet", animal: "Tiger"}
+      width: '50%',
+      height: '50%',
+      data: {scalesArray: savedScales}
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
       console.log(result);
       if(result){
-        this.scalesSaved = true;
+        this.handleScalesSave(result.scalesArray);
       }
       // this.animal = result;
     });
+  }
+
+  handleScalesSave(result){
+    debugger;
+    this.scalesSaved = true;
+    this.cartValueForm.value.scales = [];
+    result.forEach(scale => this.cartValueForm.value.scales.push(scale));
+        // console.log((<FormArray>this.cartValueForm.get('scales')));
+        // debugger;
   }
 }
