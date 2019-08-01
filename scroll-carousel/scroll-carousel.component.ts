@@ -38,7 +38,7 @@ export class ScrollCarouselComponent implements OnInit  {
 
   addNewCard(object){
     // debugger;
-    var componentRef, data = {name: "", code: "", instance: 1, index: 0};
+    var componentRef, data = {name: "", code: "", instance: 1, index: 0, color: ""};
     // const factory;
     switch(object.name) {
       case "Cart Value Condition": {
@@ -79,6 +79,7 @@ export class ScrollCarouselComponent implements OnInit  {
     data.code = this.instances[object.name][0];
     data.instance = this.instances[object.name][1]++;
     data.index = this.index++;
+    data.color = object.color;
     (<CardComponent>componentRef.instance).data = data;
   }
 
