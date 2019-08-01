@@ -6,9 +6,10 @@ button{
   word-wrap: break-word;
 }
 
-card-deck {
-  width: 100%;
-  margin: 10px;
+.card-header {
+  /* width: 100%;
+  margin: 10px; */
+  border-left: 5px solid;
 }
 
 .check{
@@ -21,6 +22,11 @@ card-deck {
   margin: 5px;
 }
 
+.form{
+  width: 100%;
+  padding: 5px;
+}
+
 .card {
   /* background-color: silver; */
   width: 100%;
@@ -28,7 +34,7 @@ card-deck {
   max-width: 100%;
 }
 
-.col-3 {
+.cardInstance {
   width: 100%;
   margin:10px;
   max-width: 100%;
@@ -40,6 +46,7 @@ mat-radio-button {
 
 mat-select {
   border-bottom: 1px solid silver;
+  width: 100%;
 }
 
 input {
@@ -51,4 +58,8 @@ input {
   color: darkGreen;
   font-style: italic;
   margin: 12px;
+}
+
+.tile{
+  width: 100%;
 }
