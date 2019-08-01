@@ -1,6 +1,6 @@
-<div #instance class="col-3">
+<div #instance class="col cardInstance">
 	<div class="card active">
-		<div class="card-header" align-items="center">
+		<div class="card-header" align-items="center" [style.border-left-color]="data.color">
 			<h6 class="float-left" vertical-align="baseline">{{data.name}} - {{data.code}}{{data.instance}}</h6>
 			<div class="float-right">
 				<!-- <button class="example-icon" (click)="onAddButtonClick(data)">Add</button>
@@ -13,27 +13,30 @@
       <!-- <p class="card-text">Some quick example text</p>
       <a href="#" class="btn btn-primary">Go somewhere</a> -->
       <div>
-        <form class="form-horizontal" [formGroup]="cartValueForm" (ngSubmit)="onSubmit()">
+        <form class="form" [formGroup]="cartValueForm" (ngSubmit)="onSubmit()">
           <mat-grid-list cols="1" rowHeight="70px" role="list">
             <mat-grid-tile role="listitem">
                 <mat-label style="margin-right: 10px;">Product Filter:</mat-label>
                 <mat-select #filter formControlName="productFilter" (selectionChange)="productFilterChange(filter.value)">
                   <!-- <mat-option *ngFor="let food of foods" [value]="food.value"> -->
-                  <mat-option value="no">None</mat-option>
-                  <mat-option value="pl">Promotion List</mat-option>
-                  <mat-option value="pc">Product Category</mat-option>
-                  <mat-option value="fe">Free Entry</mat-option>
+                  <mat-option value="None">None</mat-option>
+                  <mat-option value="Promotion List">Promotion List</mat-option>
+                  <mat-option value="Product Category">Product Category</mat-option>
+                  <mat-option value="Free Entry">Free Entry</mat-option>
                 </mat-select>
             </mat-grid-tile>
-            <mat-grid-tile  role="listitem">
-              <mat-select *ngIf=true formControlName="productFilterValue" placeholder="Product Filter Value">
-                <!-- <mat-option *ngFor="let food of foods" [value]="food.value"> -->
-                  <mat-option value="no">None</mat-option>
-              </mat-select>
-              <mat-select *ngIf=false formControlName="productFilterValue">
-                <!-- <mat-option *ngFor="let food of foods" [value]="food.value"> -->
-                  <mat-option value="pc">Product Category</mat-option>
-              </mat-select>
+            <mat-grid-tile role="listitem">
+              <div *ngIf=chooseFilterValue class="tile">
+                <mat-label style="margin-right: 10px;">{{filter.value}}:</mat-label>
+                <mat-select formControlName="productFilterValue" placeholder="Product Filter Value">
+                  <!-- <mat-option *ngFor="let food of foods" [value]="food.value"> -->
+                    <mat-option value="no">None</mat-option>
+                </mat-select>
+                <mat-select *ngIf=false formControlName="productFilterValue">
+                  <!-- <mat-option *ngFor="let food of foods" [value]="food.value"> -->
+                    <mat-option value="pc">Product Category</mat-option>
+                </mat-select>
+              </div>
             </mat-grid-tile>
             <mat-grid-tile role="listitem">
                 <mat-label style="margin-right: 10px;">Occurence:</mat-label>
